@@ -6,11 +6,11 @@ Sylius\Component\Product\Model\ProductOption:
             expose: true
             type: integer
             xml_attribute: true
-            groups: [Default, Detailed]
+            groups: [Default, Detailed, Autocomplete]
         code:
             expose: true
             type: string
-            groups: [Default, Detailed]
+            groups: [Default, Detailed, Autocomplete]
         position:
             expose: true
             type: integer
@@ -29,3 +29,7 @@ Sylius\Component\Product\Model\ProductOption:
                 route: sylius_admin_api_product_option_show
                 parameters:
                     code: expr(object.getCode())
+    virtual_properties:
+        getName:
+            serialized_name: name
+            groups: [Default, Detailed, Autocomplete]
